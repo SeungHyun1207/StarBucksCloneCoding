@@ -1,26 +1,5 @@
-// 검색 Element
-const searchEl = document.querySelector('.search');
-
-// Input Element
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click',function(){
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus',function(){
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder','통합검색');
-});
-
-searchInputEl.addEventListener('blur',function(){
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder','');
-});
-
-// 오른쪽 사이드 카드 일정 높이 넘어가면 숨김처리
 const badgeEl = document.querySelector('header .badges');
-
+// 오른쪽 사이드 카드 일정 높이 넘어가면 숨김처리
 window.addEventListener('scroll', _.throttle(function(){
     console.log("scroll!");
     if(window.scrollY > 500){
@@ -161,6 +140,3 @@ spyEls.forEach(function (spyEl) {
         .addTo(new ScrollMagic.Controller());
 })
 
-// 올해가 몇년인지
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();  // 올해 연도
